@@ -31,8 +31,6 @@ na <br/>
 ---
 3. Qual a diferença do programa da questão número para o programa a seguir:
 
-A diferença entre o programa anterior (exercício 2) é basicamente que desta vez temos um array bidimensional.
-
 ```python
 import numpy as np
 arr = np.array([[10, 11, 12], [21, 22, 23]],
@@ -44,7 +42,7 @@ R = a diferença entre o programa anterior(exercício 2) é basicamente que dest
 ---
 4. Quando fazemos referencia a um array o que o Python faz? E qual a diferença para o copy?
 
-Quando fazemos uma referência, se modificarmos o valor da “nova da nova variável” a variável que foi referenciada será modificada, com o copy isso não acontece pois modificamos apenas a cópia e não a variável original.
+Quando fazemos uma referência, se modificarmos o valor da “nova variável” a variável que foi referenciada será modificada, com o copy isso não acontece pois modificamos apenas a cópia e não a variável original.
 
 ```python
 a = np.array([0, 1])
