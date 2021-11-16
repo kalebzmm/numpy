@@ -26,25 +26,102 @@ d[0] = -11
 print('Array b: {}'.format(repr(b)))
 ```
 5. O que faz a função astype (dê um exemplo)
+
+---
 6. Quando devemos usar np.nan?
+
+NaN é a abreviação de Not a number. É usado para representar entradas não definidas, e tambem valores faltantes em datasets
+
+    ```python
+    import numpy as np
+    arr = np.array([1, np.nan, 3, 4, 5, 6, np.nan]) 
+    pritn(arr) 
+    
+    [ 1. nan  3.  4.  5.  6. nan]
+    ```
+
+---
 7. Explique np.inf e -np.inf
+
+np.inf é um numero infinito que pode ser valores positivos ou negativos. Usado para medir perfomance e algoritmos
+
+```python
+np.inf # infinito positivo
+np.ninf # infinito negativo
+```
+
+---
 8. Explique o funcionamento de arange
+
+O np.arange() é um método Numpy que retorna o objeto ndarray contendo 
+valores uniformemente espaçados dentro de um determinado intervalo
+usa quatro parâmetros que incluem  start, stop, step  e dtype
+
 ```python
 arr = np.arange(5)
-print(repr(arr))
-
-arr = np.arange(5.1)
-print(repr(arr))
-
-arr = np.arange(-1, 4)
-print(repr(arr))
-
-arr = np.arange(-1.5, 4, 2)
-print(repr(arr))
+print(repr(arr)) - [0,1,2,3,4]
 ```
-9. Faça um exemplo de códdigo com np.reshape
+
+---
+9. Faça um exemplo de código com np.reshape
+```python
+import numpy as np
+
+array = np.arange(8)
+print("Original array : \n", array)
+
+array = np.arange(8).reshape(2, 4)
+print("\narray reshaped with 2 rows and 4 columns : \n", array)
+
+# Original array : 
+# [0 1 2 3 4 5 6 7]
+
+# array reshaped with 2 rows and 4 columns : 
+# [[0 1 2 3]
+# [4 5 6 7]]
+```
+
+---
 10. Para que serve np.transpose, np.zeros, np.ones, np.zeros_like, np.ones_like - aproveite e de um exemplo de cada em um programa
 
+- **np.transpose()**: inverte a dimensão de um array
+```python
+a = np.arange(6).reshape((3,2))
+np.transpose(a)
+#resultado array([[0, 2, 4],[1, 3, 5]])
+```
+
+- **np.zeros()**: retorna uma nova matriz de dado formato e tipo, com zeros
+```python
+b = np.zeros(2, dtype = int)
+#resultado array([0 0])
+```
+
+- **np.ones()**: retorna uma nova matriz de forma e tipo fornecidos, com uns.
+```python
+b = np.ones(2, dtype = int)
+#resultado array([1 1])
+```
+
+- **np.zeros_like()**: Este método numpy retorna uma matriz de determinada forma e tipo como matriz fornecida, com zeros. 
+```python
+array = np.arange(10).reshape(5, 2)
+#resultado [[0 1] [2 3] [4 5] [6 7] [8 9]]
+
+b = np.zeros_like(array, float)
+#resultado [[0. 0.] [0. 0.] [0. 0.] [0. 0.] [0. 0.]]
+```
+
+- **np.ones_like()**: retorna um array de dado formato e tipo como um dado array, com uns. 
+```python
+array = np.arange(10).reshape(5, 2)
+#resultado [[0 1] [2 3] [4 5] [6 7] [8 9]]
+
+b = np.ones_like(array, float)
+#resultado [[1. 1.] [1. 1.] [1. 1.] [1. 1.] [1. 1.]]
+```
+
+---
 11. O que é aritmética multidimensional com python e de um exemplo de como usar
 
 A aritimética multidimensional com Python possibilita realizar as operações básicas da matemática com arrays. Exemplo:
@@ -58,6 +135,7 @@ print(np.subtract(arr1, arr2)) # Subtrai os valores dos dois arrays. Resultado: 
 print(np.divide(arr1, arr2)) # Divide os valores dos dois arrays. Resultado: [0.25, 0.4, 0.5]
 ```
 
+---
 12. Explique a linha de código abaixo da linha pontilhada no programa a seguir
 
 ```python
@@ -78,6 +156,8 @@ print(repr(np.power(3, arr2)))
 # Calcula x^2 onde x é o valor de cada item do array
 print(repr(arr**2))
 ```
+
+---
 13. Como fazer a multiplicação de matrizes usando Numpy
 
 ```python
@@ -86,9 +166,12 @@ arr2 = [2, 3, 3]
 
 print(np.multiply(arr1, arr2)) # [2, 6, 9]
 ```
+
+---
 14. Por que usamos np.random.seed?
 O np.random.seed faz com que os números "alteatórios" sejam previsíveis, ou seja, será mostrada sempre a mesma sequência de números ao utilizar o numpy.random.rand
 
+---
 15. O que faz e como funciona np.random.shuffle?
 O np.random.shuffle embaralha um array. Exemplo:
 ```python
@@ -97,8 +180,11 @@ np.random.shuffle(arr)
 print(arr) # [4, 5, 1, 3, 2]
 ```
 
-16. O que é uma distribuição "normal"?
+---
+**16.  O que é uma distribuição "normal"?**
+
 ```python
+
 print(np.random.uniform())
 print(np.random.uniform(low=-1.5, high=2.2))
 print(repr(np.random.uniform(size=3)))
@@ -106,37 +192,58 @@ print(repr(np.random.uniform(low=-3.4, high=5.9,
 size=(2, 2))))
 ```
 
-17. Explique o programa usando as linhas pontilhadas
+- A distribuição normal (também chamada de gaussiana) é um valor aleatório gerado dentro de um intervalo de valores desejado, utiliza um valor de meio e um valor de desvio padrão, calculado pela equação da Figura abaixo.
+
+![função gaussiana](funcao.png)
+
+- Distribuição normal.
+No qual μ (mu) representa o valor da média e σ (sigma) representa um desvio padrão (portanto para mais ou para menos).
+
+- Gerando uma distribuição normal, em que a média é o valor 0 e o desvio padrão é 1,
+
+---
+**17.  Explique o programa usando as linhas pontilhadas**
 ```python
+
+import numpy as np
 arr = np.array([[0, 2, 3],
-[1, 3, -6],
-[-3, -2, 1]])
-# .............................................
+                [1, 3, -6],
+                [-3, -2, 1]])
+# ..........................verifica dentro de todo o array se o valor de cada posição representa o número 3 e retorna true ou false
 print(repr(arr == 3))
-# .............................................
+# ..........................verifica dentro de todo o array se o valor de cada posição é maior que 0 e retorna true ou false
 print(repr(arr > 0))
-# .............................................
+# ..........................verifica dentro de todo o array se o valor de cada posição é diferente de 1 e retorna true ou false
 print(repr(arr != 1))
-# .............................................
+# ..........................verifica dentro de todo o array se o valor de cada posição é igual a 1 e retorna true ou false
 print(repr(~(arr != 1)))
-```
-18. Como somar e concatenar arrays
-19. Como funciona np.save e np.load
-20. Use as linhas pontilhadas para explicar
-```python
-arr = np.array([[0, 72, 3],
-[1, 3, -60],
-[-3, -2, 4]])
-# .............................................
-print(arr.min())
-print(arr.max())
-# .............................................
-print(repr(arr.min(axis=1)))
-# .............................................
-print(np.mean(arr))
-# .............................................
-print(np.var(arr))
-# .............................................
-print(np.median(arr))
 
 ```
+
+---
+**18. Como somar e concatenar arrays**
+para somar arrays  podemos  utilizar o comando np.concatenate(a,b), onde tam,bém podemos adicionar mais parametros para definir a linha do array que sera concatenada.
+
+---
+**19. Como funciona np.save e np.load**
+
+- np.save: Esta função recebe um nome de arquivo e uma matriz como argumentos e salva a matriz no formato txt. csv entre outros.
+- np.load: Carrega matrizes de arquivos, podendo ser txt. csv entre outros.
+
+---
+**20. Use as linhas pontilhadas para explicar**
+```python
+arr = np.array([[0, 72, 3],
+                [1, 3, -60],
+                [-3, -2, 4]])
+# arr.min() procura na matriz inteira o menor, arr.min() procura na matriz inteira o menor valor
+print(arr.min())
+print(arr.max())
+# procura na matriz o menor valor em cada linha
+print(repr(arr.min(axis=1)))
+# Calcula a média aritmética ao longo do eixo especificado
+print(np.mean(arr))
+# Calcula a variação ao longo do eixo especificado
+print(np.var(arr))
+# Calcule a mediana ao longo do eixo especificado.
+print(np.median(arr))
