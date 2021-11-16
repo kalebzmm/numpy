@@ -32,13 +32,13 @@ print('Array b: {}'.format(repr(b)))
 
 NaN é a abreviação de Not a number. É usado para representar entradas não definidas, e tambem valores faltantes em datasets
 
-    ```python
-    import numpy as np
-    arr = np.array([1, np.nan, 3, 4, 5, 6, np.nan]) 
-    pritn(arr) 
-    
-    [ 1. nan  3.  4.  5.  6. nan]
-    ```
+```python
+import numpy as np
+arr = np.array([1, np.nan, 3, 4, 5, 6, np.nan]) 
+pritn(arr) 
+
+[ 1. nan  3.  4.  5.  6. nan]
+```
 
 ---
 7. Explique np.inf e -np.inf
