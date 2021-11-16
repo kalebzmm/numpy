@@ -5,6 +5,7 @@
 * 11 a 15 - Kaleb Zimmermann
 * 16 a 20 - Douglas Barbosa
 
+---
 1. O que é Numpy?
 
 NumPy é uma biblioteca numérica para a linguagem de programação Python,  uma biblioteca para  que possamos armazenar criar e manipular dados de forma eficiente, para se trabalhar com diversas funções e operações matemática sofisticadas, (data science, inteligência artificial de forma geral) incluindo mas não se limitando a:
@@ -15,11 +16,17 @@ NumPy é uma biblioteca numérica para a linguagem de programação Python,  uma
 
 ---
 2. O que fará o programa a seguir:
+
 ```python
 import numpy as np # importação da biblioteca numpy e é atribuído um apelido a ela denominado np, que poderia ser qualquer outro apelido, mas que por padrão é melhor usar o np mesmo.
 arr = np.array([-9, 1, 7], dtype=np.float32) # criada uma variável chamada arr e atribuído a ela np.array( [ -9, 1, 7] ) passando entre colchetes como argumento os valores -9, 1, 7, e ainda na segunda linha com dtype=np.float32, será definido o tipo de dados do objeto, nesse caso float e o tamanho dos dados, nesse caso 32 bits.
 print(repr(arr)) # será impresso o array([-9.,  1.,  7.], dtype=float32)
 ```
+
+* na linha 01, ocorre a importação da biblioteca numpy e é atribuído um apelido a ela denominado np, que poderia ser qualquer outro apelido, mas que por padrão é melhor usar o np mesmo.<br/>
+* na linha 02 é criada uma variável chamada arr e atribuído a ela np.array( [ -9, 1, 7] ) passando entre colchetes como argumento os valores -9, 1, 7, e ainda na segunda linha com dtype=np.float32, será definido o tipo de dados do objeto, nesse caso float e o tamanho dos dados, nesse caso 32 bits.
+na <br/>
+* linha 03 será impresso o array([-9.,  1.,  7.], dtype=float32)
 
 ---
 3. Qual a diferença do programa da questão número para o programa a seguir:
@@ -32,6 +39,7 @@ arr = np.array([[10, 11, 12], [21, 22, 23]],
 dtype=np.float32)
 print(repr(arr))
 ```
+R = a diferença entre o programa anterior(exercício 2) é basicamente que desta vez temos um array bidimensional.</br></br>
 
 ---
 4. Quando fazemos referencia a um array o que o Python faz? E qual a diferença para o copy?
@@ -51,8 +59,19 @@ d[0] = -11
 print('Array b: {}'.format(repr(b)))
 ```
 
+R = Quando fazemos uma referência, se modificarmos o valor da “nova da nova variável”  a variável que foi referenciada será modificada, com o copy isso não acontece pois modificamos apenas a cópia e não a variável original.</br></br>
+
 ---
-5. O que faz a função astype (dê um exemplo)
+5. O que faz a função astype (dê um exemplo)</br>
+a função astype() cria uma cópia da matriz e permite que você especifique o tipo de dados como um parâmetro.
+
+```python
+arr = np.array([1.2,  2.1,  3.4])      #ndarray tipo float                                
+print (arr)                            # saída [1.2, 2.1, 3.4]
+newarr = arr.astype(‘int’)             
+print(newarr)                          # saída [1, 2, 3] uma cópia do arr chamada newarr desta vez int conforme solicitado no astype                             
+print(newarr.dtype)                    # aqui será impresso o tipo e o espaço que pode ocupar em bits                                   
+```
 
 ---
 6. Quando devemos usar np.nan?
@@ -274,3 +293,4 @@ print(np.mean(arr))
 print(np.var(arr))
 # Calcule a mediana ao longo do eixo especificado.
 print(np.median(arr))
+
