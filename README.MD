@@ -1,18 +1,43 @@
+### Questões sobre a biblioteca Numpy
+
+* 1 a 5 - Ézio Freire
+* 6 a 10 - Pedro Medeiros
+* 11 a 15 - Kaleb Zimmermann
+* 16 a 20 - Douglas Barbosa
+
 1. O que é Numpy?
+
+NumPy é uma biblioteca numérica para a linguagem de programação Python,  uma biblioteca para  que possamos armazenar criar e manipular dados de forma eficiente, para se trabalhar com diversas funções e operações matemática sofisticadas, (data science, inteligência artificial de forma geral) incluindo mas não se limitando a:
+
+* Objeto array para a implementação de arranjos multidimensionais; 
+* Objeto matrix para o cálculo com matrizes; Ferramentas para álgebra linear; Transformadas de Fourier básicas;
+* Ferramentas sofisticadas para geração de números aleatórios.
+
+---
 2. O que fará o programa a seguir:
 ```python
-import numpy as np
-arr = np.array([-9, 1, 7], dtype=np.float32)
-print(repr(arr))
+import numpy as np # importação da biblioteca numpy e é atribuído um apelido a ela denominado np, que poderia ser qualquer outro apelido, mas que por padrão é melhor usar o np mesmo.
+arr = np.array([-9, 1, 7], dtype=np.float32) # criada uma variável chamada arr e atribuído a ela np.array( [ -9, 1, 7] ) passando entre colchetes como argumento os valores -9, 1, 7, e ainda na segunda linha com dtype=np.float32, será definido o tipo de dados do objeto, nesse caso float e o tamanho dos dados, nesse caso 32 bits.
+print(repr(arr)) # será impresso o array([-9.,  1.,  7.], dtype=float32)
 ```
+
+---
 3. Qual a diferença do programa da questão número para o programa a seguir:
+
+A diferença entre o programa anterior (exercício 2) é basicamente que desta vez temos um array bidimensional.
+
 ```python
 import numpy as np
 arr = np.array([[10, 11, 12], [21, 22, 23]],
 dtype=np.float32)
 print(repr(arr))
 ```
+
+---
 4. Quando fazemos referencia a um array o que o Python faz? E qual a diferença para o copy?
+
+Quando fazemos uma referência, se modificarmos o valor da “nova da nova variável” a variável que foi referenciada será modificada, com o copy isso não acontece pois modificamos apenas a cópia e não a variável original.
+
 ```python
 a = np.array([0, 1])
 b = np.array([2, 3])
@@ -25,6 +50,8 @@ d = b.copy()
 d[0] = -11
 print('Array b: {}'.format(repr(b)))
 ```
+
+---
 5. O que faz a função astype (dê um exemplo)
 
 ---
