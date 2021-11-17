@@ -52,7 +52,16 @@ print('Array b: {}'.format(repr(b)))
 ```
 
 ---
-5. O que faz a função astype (dê um exemplo)
+5. O que faz a função astype (dê um exemplo)</br>
+a função astype() cria uma cópia da matriz e permite que você especifique o tipo de dados como um parâmetro.
+
+```python
+arr = np.array([1.2,  2.1,  3.4])      #ndarray tipo float                                
+print (arr)                            # saída [1.2, 2.1, 3.4]
+newarr = arr.astype(‘int’)             
+print(newarr)                          # saída [1, 2, 3] uma cópia do arr chamada newarr desta vez int conforme solicitado no astype                             
+print(newarr.dtype)                    # aqui será impresso o tipo e o espaço que pode ocupar em bits                                   
+```
 
 ---
 6. Quando devemos usar np.nan?
